@@ -1,0 +1,42 @@
+{
+    "pull": {
+        "$id": "omikuji/pull-asset",
+        "title": "PullAsset transaction asset for omikuji module",
+        "type": "object",
+        "required": ["address", "name", "jikan"],
+        "properties": {
+            "address": {
+                "dataType": "string", 
+                "fieldNumber": 1,
+                "maxLength": 41
+            },
+            "name": {
+                "dataType": "string", 
+                "fieldNumber": 2
+            },
+            "jikan": {
+                "dataType": "uint32", 
+                "fieldNumber": 3
+            }
+        }
+    },
+    "atari": {
+        "$id": "omikuji/atari-asset",
+        "title": "AtariAsset transaction asset for omikuji module",
+        "type": "object",
+        "required": ["name", "atarisu"],
+        "properties": {
+            "name": {
+                "type": "array",
+                "fieldNumber": 1,
+                "items": {
+                    "dataType": "string"
+                }
+            },
+            "atarisu": {
+                "dataType": "uint32", 
+                "fieldNumber": 2
+            }
+        }
+    }
+}

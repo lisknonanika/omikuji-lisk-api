@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/lisknonanika/omikuji-lisk-api#readme",
   "dependencies": {
-    "@liskhq/lisk-client": "^5.2.0"
+    "@liskhq/lisk-client": "^5.2.0",
+    "express": "^4.17.2",
+    "random-number-csprng": "^1.0.2"
   }
 }
