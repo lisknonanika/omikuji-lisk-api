@@ -70,6 +70,8 @@ const sendTransaction = async(client, param, passphrase, schema) => {
 app.get('/api/omikuji/pull', async(req, res) => {
     let client = undefined;
     try {
+        client = await createClient();
+        
         const passphrase = await getPassphrase();
         const param = {
             moduleID: 3535,
