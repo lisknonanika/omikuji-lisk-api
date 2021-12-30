@@ -1,0 +1,4 @@
+{
+    "name" : "omikuji-api",
+    "script" : "node ./src/index.js"
+}
