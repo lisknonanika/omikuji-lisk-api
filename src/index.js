@@ -3,6 +3,7 @@ const config = require('./config/accounts.json');
 const schema = require('./config/schema.json');
 const randomNumber = require('random-number-csprng');
 const express = require('express');
+const cors = require("cors");
 const app = express();
 const port = 3000;
 const PASSWORD = 'password';
@@ -10,6 +11,7 @@ const ATARISU = 10;
 const KIGEN = 1641258000;
 let NETWORK_ID = undefined;
 
+app.use(cors({ origin: true, credentials: true }));
 BigInt.prototype.toJSON = function() { return this.toString(); }
 Buffer.prototype.toJSON = function() { return cryptography.bufferToHex(this); }
 
