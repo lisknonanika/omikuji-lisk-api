@@ -87,8 +87,8 @@ app.get('/api/omikuji/pull', async(req, res) => {
                 jikan: Math.floor(new Date().getTime() / 1000)
             }
         }
-        const ret = await sendTransaction(client, param, passphrase, schema.pull);
-        res.json({ result: true, id: ret.transactionId});
+        const data = await sendTransaction(client, param, passphrase, schema.pull);
+        res.json({ result: true, id: data.transactionId});
 
     } catch(err) {
         res.json({ result: false, msg: err.message });
@@ -124,8 +124,8 @@ app.get('/api/omikuji/atari', async(req, res) => {
             senderPublicKey: cryptography.getPrivateAndPublicKeyFromPassphrase(passphrase).publicKey,
             asset: { name: tosensha, atarisu: ATARISU }
         }
-        const ret = await sendTransaction(client, param, passphrase, schema.atari);
-        res.json({ result: true, id: ret.transactionId, data: tosensha});
+        const data = await sendTransaction(client, param, passphrase, schema.atari);
+        res.json({ result: true, id: data.transactionId, data: tosensha});
 
 
     } catch(err) {
